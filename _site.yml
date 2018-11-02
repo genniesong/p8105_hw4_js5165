@@ -1,13 +1,14 @@
-name: "p8105_hw_1029"
+name: "genniesong.github.io/p8105_hw4_js5165/"
 output_dir: "."
 navbar:
-  title: "Resume"
+  title: "This is HW4"
   right:
     - text: "About"
       href: about.html
     - icon: fa-envelope fa-lg
-      href: mailto:<you@youremail.com>
+      href: mailto:<jingqi.song@columbia.edu>
     - icon: fa-github fa-lg
       href: http://github.com/genniesong/
 output:
   html_document:
+    theme: cosmo
