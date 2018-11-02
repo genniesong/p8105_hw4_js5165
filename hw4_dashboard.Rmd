@@ -1,5 +1,5 @@
 ---
-title: "Plot_ly"
+title: "Problem 2"
 author: "Jingqi Song"
 date: "2018/11/1"
 output: 
@@ -7,7 +7,6 @@ output:
     orientation: columns
     vertical_layout: fill
 ---
-
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
