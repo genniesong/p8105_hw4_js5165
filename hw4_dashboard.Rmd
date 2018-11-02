@@ -1,15 +1,32 @@
 ---
-title: "hw4_dashboard"
+title: "Plot_ly"
+author: "Jingqi Song"
+date: "2018/11/1"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
 ---
 
+
 ```{r setup, include=FALSE}
 library(flexdashboard)
 library(p8105.datasets)
 library(tidyverse)
+library(plotly)
+noaa = ny_noaa %>% 
+  janitor::clean_names() %>%
+  separate(date, into = c("year", "month", 'day'), sep = "-") %>%
+  mutate(
+    tmax = as.numeric(tmax) / 10, 
+    tmin = as.numeric(tmin) / 10,
+    prcp = prcp / 10) %>% 
+  filter(year == "2001",
+         !is.na(prcp),
+         !is.na(snow),
+         !is.na(snwd),
+         !is.na(tmax),
+         !is.na(tmin))
 ```
 
 Column {data-width=650}
@@ -17,7 +34,19 @@ Column {data-width=650}
 
 ### Chart A
 
+Here is a hex plot that indicates the linearity between max and min temperatures in year 2001.
+
+
 ```{r}
+hex_ggplot = noaa %>% 
+  ggplot(aes(x = tmax, y = tmin)) + 
+  geom_hex() +
+  labs(
+    title = "Maximum Temperature vs Minimum Temperature",
+    x = "Maximum Temperature (C)",
+    y = "Minimum Temperature (C)"
+  )
+ggplotly(hex_ggplot)
 
 ```
 
@@ -26,12 +55,22 @@ Column {data-width=350}
 
 ### Chart B
 
+Chart B is a box plot showing the distribution of max temperature of each month in 2001.
+
 ```{r}
 
+noaa %>% 
+    plot_ly(y = ~tmax, color = ~month, type = "box",
+          colors = "Set2")
 ```
 
 ### Chart C
 
-```{r}
+It is a scatter plot of the trends of max and min temperatures with the change of snow depth.
 
+```{r}
+noaa %>%
+  plot_ly(x = ~tmax, y = ~tmin, type = "scatter", mode = "markers",
+          alpha = 0.5, 
+          color = ~snwd)
 ```

@@ -1,7 +1,19 @@
 ---
-title: "Holy cow!"
+title: "This is HW4!"
 ---
 
-### I have a webpage!
 
-And I can put all kinds of stuff on it!
+### About this site
+
+
+This is the website for homework 4 from js5165.
+
+Welcome to my website.
+
+
+You can browse my github and linkedin, send me email, or have a look at my resume on the top corner of this page. 
+
+Like it or not, check it out!
+
+
+Here's the [plot page](hw4_dashboard.html) of Question 2

@@ -2,13 +2,12 @@
 title: "Resume"
 ---
 
-### About this site
-
-This is Jingqi Song.
-Welcome to my website.
-
-Here's my resume, like it or not, check it out!
 
 ### Resume
 
-<img src="Resume_JS.jpg" style="width:75%">
+
+Here's my resume.
+
+All made-up. Don't believe in it.
+
+<img src="Resume_JS.jpg" style="width:100%">
